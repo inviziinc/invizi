@@ -1,48 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Local Development Setup
 
-Things you may want to cover:
+### Requirements
 
-* Ruby version
+- Ruby >3 (see `Gemfile`)
+- PostgreSQL >9.3 (ideally, latest stable version)
 
-3.3.0
+After cloning the repo, the basic setup commands are:
 
-* System dependencies
+```sh
+cd invizi
+cp .env.example .env
+bin/setup
+bin/dev
 
-* Configuration
-
-* Database creation
-Run the following commands in `psql` shell.
-
-On linux you can login as superuser `postgres` and launch `psql` shell
-with: 
-
+# TODO: Optionally, load demo data
+rake demo_data:reset
 ```
-sudo -u postgres psql
-```
-
-After launching `psql` as `postgres` run the following commands:
-
-```
-  create user sa_invizi_dev with password 'super_secret_password';
-  create user sa_invizi_test with password 'super_secret_password';
-  create database invizi_development owner sa_invizi_dev;
-  create database invizi_test owner sa_invizi_test;
-  alter user sa_invizi_test CREATEDB;
-  alter user sa_invizi_dev CREATEDB;
-```
-
-Move the files `.env.*.*.template` to `.env.*.*` and substitute the
-environmental variables with the ones from above.
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
