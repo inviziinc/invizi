@@ -1,0 +1,89 @@
+{
+  "name": "Invizi",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/ruby:1": {
+			"version": "3.3.0"
+		},
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "21.6.2" // Change Node version as required
+		},
+		"ghcr.io/devcontainers/features/common-utils:1": {
+			"username": "vscode",
+			"uid": 1000,
+			"gid": 1000,
+			"upgradePackages": true
+		}
+	},
+	"customizations": {
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": {
+				"workbench.iconTheme": "vscode-icons",
+				"workbench.colorTheme": "GitHub Dark",
+				"emmet.includeLanguages": {
+					"erb": "html"
+				},
+				"sqltools.connections": [
+					{
+						"name": "Invizi Development Database",
+						"driver": "PostgreSQL",
+						"previewLimit": 50,
+						"server": "db",
+						"port": 5432,
+						// update this to match config/database.yml
+						"database": "invizi_development",
+						"username": "postgres",
+						"password": "postgres"
+					},
+					{
+						"name": "Invizi Test Database",
+						"driver": "PostgreSQL",
+						"previewLimit": 50,
+						"server": "db",
+						"port": 5432,
+						// update this to match config/database.yml
+						"database": "invizi_test",
+						"username": "postgres",
+						"password": "postgres"
+					}
+				],
+				"ruby.format": "rubocop",
+				"editor.formatOnSave": true
+			},
+			"extensions": [
+				"iliazeus.vscode-ansi",
+				"ms-azuretools.vscode-docker",
+				"manuelpuyol.erb-linter",
+				"IBM.output-colorizer",
+				"aki77.rails-db-schema",
+				"bung87.rails",
+				"connorshea.vscode-ruby-test-adapter",
+				"rebornix.Ruby",
+				"mtxr.sqltools-driver-pg",
+				"mtxr.sqltools",
+				"wingrunr21.vscode-ruby",
+				"LoranKloeze.ruby-rubocop-revived",
+				"bung87.vscode-gemfile",
+			]
+		}
+	},
+  "containerEnv": {
+    "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}",
+    "GITHUB_USER": "${localEnv:GITHUB_USER}"
+  },
+  "remoteEnv": {
+    "PATH": "/workspace/bin:${containerEnv:PATH}"
+  },
+  "forwardPorts": [
+		3000,
+    5432, // Not sure if this is needed but why not?
+  ],
+    // Use 'onCreateCommand' to run commands while the container is creating.
+  "postCreateCommand": "bundle install"
+}
