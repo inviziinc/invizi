@@ -1,4 +1,4 @@
-# README
+# Invizi: the new way to search for renters
 
 ## Local Development Setup
 
