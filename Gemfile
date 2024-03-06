@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
-ruby "3.3.0"
+
+ruby file: ".ruby-version"
 
 # Use specific branch of Rails
 gem "rails", github: "rails/rails", branch: "7-1-stable"
