@@ -14,7 +14,4 @@ cd invizi
 cp .env.example .env
 bin/setup
 bin/dev
-
-# TODO: Optionally, load demo data
-rake demo_data:reset
 ```
