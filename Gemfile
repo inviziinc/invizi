@@ -48,7 +48,6 @@ group :development, :test do
   gem 'debug', platforms: %i[mri windows]
   gem 'dotenv-rails', '~> 2.8'
   gem 'faker', '~> 3.2'
-  gem 'bundler-audit', '~> 0.4.0'
 end
 
 group :development do
