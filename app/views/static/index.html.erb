@@ -5,7 +5,7 @@
     <div class="mx-auto max-w-xl text-center">
       <h1 class="text-3xl font-extrabold sm:text-5xl">
         Invizi.
-        <strong class="font-extrabold text-red-700 sm:block"> Don't miss out on your forever home because of the renter pool. </strong>
+        <strong class="font-extrabold text-red-700 sm:block"> Don't miss out on your perfect place because of the renter pool. </strong>
       </h1>
 
       <p class="mt-4 sm:text-xl/relaxed">
@@ -29,4 +29,12 @@
       </div>
     </div>
   </div>
+	<div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
+		<%= form_with url: '#' do |form| %>
+				<%= form.text_field :name, placeholder: "First name", label: "First Name" %>
+				<%= form.text_field :name, placeholder: "Family name", label: "Family Name" %>
+				<%= form.email_field :email, label: true, autofocus: false, autocomplete: "email", required: 'required', placeholder: 'you@example.com' %>
+				<%= form.submit 'Submit' %>
+		<% end %>
+	</div>
 </section>
