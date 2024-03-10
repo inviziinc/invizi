@@ -43,9 +43,12 @@ gem 'bootsnap', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'pry'
+  gem 'pry-doc'
   gem 'debug', platforms: %i[mri windows]
   gem 'dotenv-rails', '~> 2.8'
   gem 'faker', '~> 3.2'
+  gem 'bundler-audit', '~> 0.4.0'
 end
 
 group :development do
@@ -54,8 +57,6 @@ group :development do
   gem 'web-console'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   gem 'rack-mini-profiler'
-
-  # rubocop delivered
   gem 'rubocop-rails-omakase', require: false
 
   # For security vulnerabilities
