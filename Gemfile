@@ -46,7 +46,7 @@ group :development, :test do
   gem 'pry'
   gem 'pry-doc'
   gem 'debug', platforms: %i[mri windows]
-  gem 'dotenv-rails', '~> 2.8'
+  gem 'dotenv-rails', '~> 3.1'
   gem 'faker', '~> 3.2'
 end
 
