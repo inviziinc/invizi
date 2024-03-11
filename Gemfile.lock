@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/hotwired/turbo-rails.git
-  revision: e8dd34a11b588978534ce9b8f8e0822f2c6e3f2a
+  revision: ab9c87e18b8a600751297200364290635b3f88fe
   branch: main
   specs:
-    turbo-rails (2.0.4)
+    turbo-rails (2.0.5)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
@@ -153,11 +153,10 @@ GEM
       i18n (>= 1.8.11, < 2)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    i18n (1.14.3)
+    i18n (1.14.4)
       concurrent-ruby (~> 1.0)
-      racc (~> 1.7)
     io-console (0.7.2)
-    irb (1.11.2)
+    irb (1.12.0)
       rdoc
       reline (>= 0.4.2)
     jbuilder (2.11.5)
